@@ -1,5 +1,6 @@
 .vscode
 .antlr
 gen
+testfiles
 *.java
 *.DS_Store
