@@ -25,6 +25,8 @@ assignment : prefixexp assignment_operators exp
      |varDec assignment_operators exp
      | arrayDec '='  type args ('['INTEGER']');
 
+exp :'none' | BOOL | INTEGER | STRING | Float | prefixexp
+    | CLASSNAME args  | '('assign')'   | ID args ;
 prefixexp : ID  | prefixexp '[' INTEGER (arithmetic_operator INTEGER)*']'   | prefixexp '.' ID  | prefixexp '.' ID args;
 args : '(' (explist)? ')' ;
 explist : exp (',' exp)*;
@@ -33,14 +35,15 @@ relational_operators : '<'|'>'| '<='  | '>='| '=='  | '!=';
 assignment_operators : '='  | '+='  | '-='  | '*='| '/=';
 type : 'int' | 'float' | 'bool' | 'string' | CLASSNAME;
 
+
+//TODO PRIORITY
+
 assign : and (('=' | '+=' | '*=' | '-=' | '/=') and) ;
 and  : equality (('and' | 'or') equality)* ;
 equality : relation (('==' | '!=') relation)* ;
 relation : add (('>' | '<' | '>=' | '<=') add)* ;
 add :  mult (('+' | '-') mult)* ;
 mult :  exp (('*' | '/' | '%') exp)* ;
-exp :'none' | BOOL | INTEGER | STRING | Float | prefixexp
-    | CLASSNAME args  | '('assign')'   | ID args ;
 
 CLASSNAME :('A'..'Z') LetterOrDigit*;
 ID : ('a'..'z') LetterOrDigit*;
@@ -62,9 +65,6 @@ fragment Float: ([0-9]+'.'([0-9]+)? | '.' [0-9]+) (('e'|'E') ('-'|'+')? [0-9]+)?
 
 SINGLELINECOMMENT : '#' ~[\r\n]* '\r'? '\n' -> channel(HIDDEN);
 MULTILINECOMMENT :'#*' .*? '*#'    -> channel(HIDDEN);
-
-//TODO PRIORITY
-
 
 
 fragment Letter : [a-zA-Z_];
