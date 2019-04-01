@@ -1,6 +1,6 @@
-.idea
+*/.idea
 .java
 .*ml
 .antlr
 .vscode
-./testfile
+/testfile
