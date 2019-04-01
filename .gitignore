@@ -1,4 +1,5 @@
 .vscode
 .antlr
+gen
 *.java
 *.DS_Store
