@@ -1,3 +1,4 @@
 .vscode
 .antlr
 *.java
+*.DS_Store
