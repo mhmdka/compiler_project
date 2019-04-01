@@ -3,4 +3,4 @@
 .*ml
 .antlr
 .vscode
-testfile
+./testfile
