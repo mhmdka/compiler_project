@@ -1,4 +1,4 @@
-grammar phase1;
+grammar Jython;
 
 prog : importclass* (classDef)?;
 importclass : 'import' CLASSNAME;
