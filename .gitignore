@@ -1,7 +1,13 @@
+# Folders
 .idea
 .vscode
 .antlr
 gen
 testfiles
+starter
+.classpath
+
+# Files
 *.java
 *.DS_Store
+*.xml
