@@ -6,7 +6,7 @@ public class Translate
     public static void main(String[] args) throws Exception
     {
         // CharStream that reads from standard input
-        CharStream stream = CharStreams.fromFileName("/Users/Galiold/Documents/University/6th Sem - Spring 2019/Compiler/Project/compiler_project/testfiles/test");
+        CharStream stream = CharStreams.fromFileName("../testfiles/test1");
         // Lexer that feeds off of input CharStream
         JythonLexer lexer = new JythonLexer(stream); 
         // ‌Buffer of tokens pulled from the lexer

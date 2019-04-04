@@ -838,66 +838,72 @@ public class JythonParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 20, RULE_statement);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
 			setState(174);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
+				enterOuterAlt(_localctx, 1);
 				{
 				setState(165);
 				varDec();
 				}
 				break;
 			case 2:
+				enterOuterAlt(_localctx, 2);
 				{
 				setState(166);
 				assignment();
 				}
 				break;
 			case 3:
+				enterOuterAlt(_localctx, 3);
 				{
 				setState(167);
 				print_statment();
 				}
 				break;
 			case 4:
+				enterOuterAlt(_localctx, 4);
 				{
 				setState(168);
 				method_call();
 				}
 				break;
 			case 5:
+				enterOuterAlt(_localctx, 5);
 				{
 				setState(169);
 				return_statment();
 				}
 				break;
 			case 6:
+				enterOuterAlt(_localctx, 6);
 				{
 				setState(170);
 				if_statment();
 				}
 				break;
 			case 7:
+				enterOuterAlt(_localctx, 7);
 				{
 				setState(171);
 				while_statment();
 				}
 				break;
 			case 8:
+				enterOuterAlt(_localctx, 8);
 				{
 				setState(172);
 				if_else_statment();
 				}
 				break;
 			case 9:
+				enterOuterAlt(_localctx, 9);
 				{
 				setState(173);
 				for_statment();
 				}
 				break;
-			}
 			}
 		}
 		catch (RecognitionException re) {
