@@ -1,13 +1,14 @@
 # Folders
 .idea
 .vscode
-.antlr
 gen
 testfiles
 starter
 .classpath
 
 # Files
-*.java
+*.interp
+*.tokens
+*.class
 *.DS_Store
 *.xml
