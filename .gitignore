@@ -2,7 +2,6 @@
 .idea
 .vscode
 gen
-testfiles
 starter
 .classpath
 

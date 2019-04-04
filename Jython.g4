@@ -6,13 +6,17 @@ classDef :'class' CLASSNAME('(' CLASSNAME')')? '{' class_body* '}';
 class_body : varDec| methodDec| constructor    | arrayDec  ;
 varDec : type ID ;
 arrayDec : type '['INTEGER']' ID ;
+
+//My Changes
+arrayAssign : arrayDec '=' type args ('['INTEGER']');
+
 methodDec : 'def' (type|'void') ID  '(' parameter* ')''{' ( statement)* '}';
 constructor : 'def'  CLASSNAME'(' parameter* ')''{' ( statement)* '}';
 parameter : varDec (',' varDec)* ;
-statement: (varDec| assignment   | print_statment  | method_call  | return_statment | if_statment    | while_statment   | if_else_statment   | for_statment);
+statement: (varDec| assignment | print_statment  | method_call  | return_statment | if_statment    | while_statment   | if_else_statment | for_statment);
 return_statment : 'return' exp ;
 condition_list : condition (('or'|'and') condition)*;
-condition : BOOL| prefixexp    | (exp) relational_operators (exp);
+condition : BOOL| prefixexp | equality;
 if_statment : 'if' '(' condition_list ')' '{' statement* '}';
 while_statment : 'while' '(' condition_list ')' '{' statement* '}' ;
 if_else_statment :'if' '(' condition_list ')' '{'statement* '}' ('elif' '(' condition_list ')' '{' statement*
@@ -21,24 +25,21 @@ print_statment : 'print' '(' (prefixexp | type args | INTEGER |STRING | BOOL) ')
 for_statment : 'for' ID 'in' ID '{' statement* '}'
      |'for' ID 'in' 'range''('INTEGER (',' INTEGER)? (',' INTEGER)? ')' '{' statement* '}';
 method_call : prefixexp '.' ID args  | ID args;
-assignment : prefixexp assignment_operators exp
-     |varDec assignment_operators exp
-     | arrayDec '='  type args ('['INTEGER']');
+assignment : assign
+     |type assign
+     | arrayAssign;
 
 exp :'none' | BOOL | INTEGER | STRING | Float | prefixexp
     | CLASSNAME args  | '('assign')'   | ID args ;
-prefixexp : ID  | prefixexp '[' INTEGER (arithmetic_operator INTEGER)*']'   | prefixexp '.' ID  | prefixexp '.' ID args;
+prefixexp : ID  | prefixexp '['add']' | prefixexp '.' ID  | prefixexp '.' ID args | 'self' '.' method_call | 'self' '.' ID;
 args : '(' (explist)? ')' ;
 explist : exp (',' exp)*;
-arithmetic_operator: '+'  | '-'|'*'|'/'| '%';
-relational_operators : '<'|'>'| '<='  | '>='| '=='  | '!=';
-assignment_operators : '='  | '+='  | '-='  | '*='| '/=';
 type : 'int' | 'float' | 'bool' | 'string' | CLASSNAME;
 
 
 //TODO PRIORITY
 
-assign : and (('=' | '+=' | '*=' | '-=' | '/=') and) ;
+assign : and (('=' | '+=' | '*=' | '-=' | '/=') and)* ;
 and  : equality (('and' | 'or') equality)* ;
 equality : relation (('==' | '!=') relation)* ;
 relation : add (('>' | '<' | '>=' | '<=') add)* ;
@@ -59,8 +60,7 @@ INTEGER : Dec | Hex | Oct | Bin;
 BOOL : 'true' | 'false';
 
 STRING : '"' AnyLetter* (' ' | AnyLetter)* '"';
-
-fragment Float: ([0-9]+'.'([0-9]+)? | '.' [0-9]+) (('e'|'E') ('-'|'+')? [0-9]+)? [fFdD]?
+Float: ([0-9]+'.'([0-9]+)? | '.' [0-9]+) (('e'|'E') ('-'|'+')? [0-9]+)? [fFdD]?
     | [0-9]+ (('e'|'E') ('-'|'+')? [0-9]+ [fFdD]? | [fFdD]);
 
 SINGLELINECOMMENT : '#' ~[\r\n]* '\r'? '\n' -> channel(HIDDEN);

@@ -1,0 +1,22 @@
+import Food
+import Stomach
+
+class Human
+{
+    int stomachCapacity
+    bool isHungry
+    def void eat(Food food)
+    {
+        newFood = food # Error: newFood is not defined
+        while(self.isHungry and (food.amount > (stomachCapacity + 20 * (5 + 7.4))))
+        {
+            Food newFood = Food()
+            eat(newFood)
+            self.isHungry = self.checkIsHungry()
+        }
+    }
+    def bool checkIsHungry()
+    {
+        return true
+    }
+}
