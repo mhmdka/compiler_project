@@ -21,6 +21,9 @@ public class Translate
         walker.walk(new MyListener(), tree);
         // print a \n after translation
         System.out.println();
+
+        // Printing LISP-style tree
+        // System.out.println(tree.toStringTree(parser));
     }
 
      
