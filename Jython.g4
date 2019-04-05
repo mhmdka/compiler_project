@@ -37,7 +37,7 @@ if_statment             :   'if' '(' condition_list ')' '{' statement* '}';
 while_statment          :   'while' '(' condition_list ')' '{' statement* '}';
 if_else_statment        :   'if' '(' condition_list ')' '{'statement* '}'
                             ('elif' '(' condition_list ')' '{' statement*'}')*
-                            'else' '{' statement* '}';
+                            ('else' '{' statement* '}')?;
 print_statment          :   'print' '(' (prefixexp | type args | INTEGER | STRING | BOOL) ')';
 for_statment            :   'for' ID 'in' ID '{' statement* '}'
                         |   'for' ID 'in' 'range' '(' INTEGER (',' INTEGER)? (',' INTEGER)? ')' '{' statement* '}';
@@ -104,7 +104,7 @@ BOOL                    :   'true'
                         |   'false'
                         ;
 
-STRING                  :   '"' AnyLetter* (' ' | AnyLetter)* '"';
+STRING                  :   '"'  (~[\r\n"] | '""')* '"';
 Float                   :   ([0-9]+ '.' ([0-9]+)? | '.' [0-9]+) (('e'|'E') ('-'|'+')? [0-9]+)? [fFdD]?
                         |   [0-9]+ (('e'|'E') ('-'|'+')? [0-9]+ [fFdD]? | [fFdD])
                         ;
@@ -112,10 +112,6 @@ Float                   :   ([0-9]+ '.' ([0-9]+)? | '.' [0-9]+) (('e'|'E') ('-'|
 fragment Letter         :   [a-zA-Z_];
 fragment LetterOrDigit  :   Letter 
                         |   [0-9]
-                        ;
-fragment AnyLetter      :   ~[\u0000-\u007F\uD800-\uDBFF] 
-                        |   ~[\uD800-\uDBFF\uDC00-\uDFFF]
-                        |   [a-zA-Z$_]
                         ;
 
 fragment INT_DEC        :   'int';

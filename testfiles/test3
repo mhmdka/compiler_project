@@ -1,0 +1,34 @@
+class Test3
+{
+    int test
+    string hello
+    
+    def void setHello(string hello){
+        self.hello = hello
+        
+    }
+    
+    def void print_hello(){
+        setHello("hello")
+        print(self.hello)
+    }
+    
+    def void print_a_lot(int number){
+        int i = 0
+        int j = 0
+        while(i < number){
+            if(i % 3 == 0){
+                printHello()
+            }
+            elif ( i % 5 == 1){
+                print("good bye, all!")   
+            }
+            else{
+                print("It is all right")
+            }             
+        }
+    }
+    def void main(){
+        print_a_lot(50)
+    }
+}
