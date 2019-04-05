@@ -12,7 +12,7 @@ varDec                  :   type ID ;
 arrayDec                :   type '['INTEGER']' ID ;
 
 //My Changes
-arrayAssign             :   arrayDec '=' type args ('['INTEGER']');
+arrayAssign             :   (arrayDec | prefixexp) '=' type args ('['INTEGER']');
 
 methodDec               :   'def' (type|'void') ID  '(' parameter* ')''{' ( statement)* '}';
 constructor             :   'def'  CLASSNAME'(' parameter* ')''{' ( statement)* '}';

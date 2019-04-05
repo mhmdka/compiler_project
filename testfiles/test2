@@ -1,0 +1,24 @@
+import Ali
+import Mohammad
+
+class Test2
+{
+    int abc123
+    float try
+    bool isItTime
+    string hmmm
+    Mohammmad [10] array
+    
+    def bool say(int arg1, float arg2){
+        int i
+        int result = 0
+        self.array = Mohammad()[10]
+        self.array[10/4+5] = 6
+        for i in range(10){
+            while(isItTime){
+                result = arg1%(arg2-i and self.try)
+            }
+        }
+    return result
+    }
+}
