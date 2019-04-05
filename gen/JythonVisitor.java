@@ -1,4 +1,4 @@
-// Generated from /Users/Galiold/Documents/University/6th Sem - Spring 2019/Compiler/Project/compiler_project/Jython.g4 by ANTLR 4.7
+// Generated from /home/mohammad/JavaProjects/compiler_phase1/Jython.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

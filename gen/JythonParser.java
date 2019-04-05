@@ -1,4 +1,4 @@
-// Generated from Jython.g4 by ANTLR 4.7.2
+// Generated from /home/mohammad/JavaProjects/compiler_phase1/Jython.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -140,6 +140,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitProg(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitProg(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgContext prog() throws RecognitionException {
@@ -200,6 +205,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitImportclass(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitImportclass(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ImportclassContext importclass() throws RecognitionException {
@@ -247,6 +257,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitClassDef(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitClassDef(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -331,6 +346,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitClass_body(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitClass_body(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Class_bodyContext class_body() throws RecognitionException {
@@ -398,6 +418,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitVarDec(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitVarDec(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final VarDecContext varDec() throws RecognitionException {
@@ -440,6 +465,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitArrayDec(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitArrayDec(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -497,6 +527,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitArrayAssign(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitArrayAssign(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -584,6 +619,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitMethodDec(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitMethodDec(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -695,6 +735,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitConstructor(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitConstructor(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ConstructorContext constructor() throws RecognitionException {
@@ -776,6 +821,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitParameter(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitParameter(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ParameterContext parameter() throws RecognitionException {
@@ -855,6 +905,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -957,6 +1012,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitReturn_statment(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitReturn_statment(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Return_statmentContext return_statment() throws RecognitionException {
@@ -1000,6 +1060,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitCondition_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitCondition_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1069,6 +1134,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitCondition(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitCondition(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ConditionContext condition() throws RecognitionException {
@@ -1133,6 +1203,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitIf_statment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitIf_statment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1203,6 +1278,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitWhile_statment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitWhile_statment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1276,6 +1356,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitIf_else_statment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitIf_else_statment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1416,6 +1501,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitPrint_statment(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitPrint_statment(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Print_statmentContext print_statment() throws RecognitionException {
@@ -1512,6 +1602,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitFor_statment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitFor_statment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1648,6 +1743,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitMethod_call(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitMethod_call(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Method_callContext method_call() throws RecognitionException {
@@ -1713,6 +1813,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitAssignment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitAssignment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1786,6 +1891,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitExp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitExp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1905,6 +2015,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitPrefixexp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitPrefixexp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2041,6 +2156,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitArgs(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitArgs(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArgsContext args() throws RecognitionException {
@@ -2096,6 +2216,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitExplist(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitExplist(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExplistContext explist() throws RecognitionException {
@@ -2150,6 +2275,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitType(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TypeContext type() throws RecognitionException {
@@ -2200,6 +2330,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitAssign(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitAssign(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2268,6 +2403,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitAnd(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitAnd(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AndContext and() throws RecognitionException {
@@ -2334,6 +2474,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitEquality(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitEquality(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2402,6 +2547,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitRelation(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitRelation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final RelationContext relation() throws RecognitionException {
@@ -2469,6 +2619,11 @@ public class JythonParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitAdd(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitAdd(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AddContext add() throws RecognitionException {
@@ -2535,6 +2690,11 @@ public class JythonParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof JythonListener ) ((JythonListener)listener).exitMult(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof JythonVisitor ) return ((JythonVisitor<? extends T>)visitor).visitMult(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
