@@ -76,7 +76,7 @@ type                    :   'int'
                         |   CLASSNAME;
 
 
-//TODO PRIORITY
+// PRIORITY
 
 assign                  :   and (('=' | '+=' | '*=' | '-=' | '/=') and)* ;
 and                     :   equality (('and' | 'or') equality)* ;
