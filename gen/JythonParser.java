@@ -1,4 +1,4 @@
-// Generated from /home/mohammad/JavaProjects/compiler_phase1/Jython.g4 by ANTLR 4.7.2
+// Generated from /home/arman/Documents/compiler_project/Jython.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
